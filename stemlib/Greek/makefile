@@ -1,5 +1,5 @@
 CC= gcc
-CFLAGS= -O2
+CFLAGS= -O2 -Wno-error=implicit-function-declaration
 LSJDIR=/local/text/lsj
 
 STEMPROG= stemsrc/stripref stemsrc/zapfirstf stemsrc/headnolen \
@@ -61,7 +61,6 @@ stemind/nomind:	stemsrc/lsj.nom getentities.pl
 
 entities: stemsrc/entitylist-byhand.txt
 	./getentities.pl stemsrc/entitylist-byhand.txt  $(nomsrc) stemsrc/lsj.nom stemsrc/lsj.byhand > steminds/entitylist.txt
-	
 
 ia.noms:
 	echo "[aehuwo]i h_hs" > /tmp/skip.ia
